@@ -2,6 +2,7 @@ package com.afet.afetveacildurumtoplanmaalanlar_izmir.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -27,7 +28,9 @@ class alanActivity : AppCompatActivity() {
         alanListViewModel.getAlanList()
 
         alanListViewModel.gameListLiveData.observe(this, Observer { cevap->
-            Toast.makeText(applicationContext, cevap.kayitSayisi.toString() ,Toast.LENGTH_LONG).show() // obje için
+//            Toast.makeText(applicationContext, cevap.kayitSayisi.toString() ,Toast.LENGTH_LONG).show() // obje için
+            Log.i("Text: ",cevap.kayitSayisi.toString())
+
             //Toast.makeText(applicationContext, cevap[1].tur_ad, Toast.LENGTH_LONG).show() // api si list olanlar için
 
         })
