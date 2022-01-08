@@ -11,7 +11,6 @@ interface ToplanmaAlanlariApi {
     companion object{
         const val AFETALANLARI = "ibb/cbs/afetaciltoplanmaalani"
         //const val AFETALANLARI = "ibb/cbs/afetaciltoplanmaalani/{id}"
-
     }
 
     //gameType/1    ->Path
@@ -20,12 +19,14 @@ interface ToplanmaAlanlariApi {
     // gameType: 1  ->Body
     // }
 
+    //model -> servisten gelen datayı karşılayan taraf
+    //view -> kullancıyı ilgilendiren sayfa mainactivity gibi
+    //viewmodel -> bizim için servis isteklerini atan livedata
+
     @GET(AFETALANLARI)
     fun getAlanList() : Single<AlanlarListResponse>
-
 
 //    fun getAlanList(@Path("id") typeId : Int) : Single<AlanlarListResponse> {
 //
 //    }
-
 }

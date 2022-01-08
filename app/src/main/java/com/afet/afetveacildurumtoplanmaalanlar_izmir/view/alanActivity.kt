@@ -9,9 +9,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.afet.afetveacildurumtoplanmaalanlar_izmir.R
-import com.afet.afetveacildurumtoplanmaalanlar_izmir.adapter.AlanlarListAdapter
 import com.afet.afetveacildurumtoplanmaalanlar_izmir.viewmodel.AlanlarListViewModel
 import kotlinx.android.synthetic.main.activity_alan.*
+import com.afet.afetveacildurumtoplanmaalanlar_izmir.adapter.AlanlarListAdapter as AlanlarListAdapter
 
 class alanActivity : AppCompatActivity() {
 
@@ -28,12 +28,15 @@ class alanActivity : AppCompatActivity() {
         alanListViewModel.getAlanList()
 
         alanListViewModel.gameListLiveData.observe(this, Observer { cevap->
-//            Toast.makeText(applicationContext, cevap.kayitSayisi.toString() ,Toast.LENGTH_LONG).show() // obje için
-            Log.i("Text: ",cevap.kayitSayisi.toString())
-
-            //Toast.makeText(applicationContext, cevap[1].tur_ad, Toast.LENGTH_LONG).show() // api si list olanlar için
-
+                Toast.makeText(applicationContext, cevap.kayitSayisi.toString() ,Toast.LENGTH_LONG).show() // obje için
+                Log.i("Text: ",cevap.kayitSayisi.toString())
+                //Toast.makeText(applicationContext, cevap[1].tur_ad, Toast.LENGTH_LONG).show() // api si list olanlar için
         })
+
+//        alanListViewModel.gameListLiveData.observe(this, Observer {
+//            alanAdapter.getData(it)
+//
+//        })
 
         var alanList : ArrayList<String> = arrayListOf()
         alanList.add("Poyrazköy")

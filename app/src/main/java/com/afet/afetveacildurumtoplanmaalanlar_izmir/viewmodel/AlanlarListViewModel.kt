@@ -17,6 +17,7 @@ class AlanlarListViewModel : ViewModel() {
     val gameListLiveData : MutableLiveData<AlanlarListResponse> = MutableLiveData<AlanlarListResponse>()
 
     @SuppressLint("CheckResult")
+    //Thread, rxjava lı kısım
     fun getAlanList() {
         alanAPIService.getAlanlarList().subscribeOn(Schedulers.newThread())
             .observeOn(AndroidSchedulers.mainThread())
